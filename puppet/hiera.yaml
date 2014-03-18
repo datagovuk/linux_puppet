@@ -1,0 +1,19 @@
+---
+:backends:
+    - eyaml
+    - yaml
+
+:hierarchy:
+    - %{role}
+    - common
+
+:yaml:
+    :datadir: '/etc/hieradata'
+:eyaml:
+    :datadir: '/etc/hieradata'
+    :extension: 'yaml'
+
+    # If using the pkcs7 encryptor (default)
+    # TODO move to /etc/puppet/secret/keys on Puppetmaster
+    :pkcs7_private_key: /vagrant/keys/private_key.pkcs7.pem
+    :pkcs7_public_key:  /vagrant/keys/public_key.pkcs7.pem
