@@ -1,0 +1,9 @@
+puppet_modules
+.DS_Store
+.idea/
+.vagrant
+puppet/.librarian
+puppet/.tmp
+puppet/modules
+keys
+dgud7
