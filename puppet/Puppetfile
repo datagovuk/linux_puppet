@@ -69,3 +69,6 @@ mod 'wget',
 
 mod 'postfix',
     :git => 'https://github.com/SilexConsulting/puppet-postfix.git'
+
+mod 'dgu_solr',
+    :git => 'https://github.com/datagovuk/dgu_solr.git'
