@@ -23,6 +23,16 @@ then
     chmod 700 /home/co/.ssh
     echo dev > /etc/role
 
+    if [ ! -f /vagrant/keys };
+    then
+        cd /vagrant
+        eyaml  createkeys
+        cd keys
+        openssl genrsa -aes128 -passout pass:secret -out id_rsa 2048
+        openssl rsa -in id_rsa -passin pass:secret -out id_rsa.pub -pubout
+        openssl rsa -in id_rsa -passin pass:secret -out id_rsa
+    fi
+
     #Temporary - need to add these to the base box?
     apt-get update
     sudo gem install hiera
@@ -30,13 +40,13 @@ then
     rm -rf /etc/puppet
     ln -sf /vagrant/puppet /etc/
     ln -sf /etc/puppet/hiera.yaml /etc/
+    #Update puppet module dependencies using librarian-puppet
+    cd /vagrant/puppet
+    sudo librarian-puppet update
 fi
 
 
 
-#Update puppet module dependencies using librarian-puppet
-cd /vagrant/puppet
-sudo librarian-puppet update
 ln -sf /vagrant/hieradata /etc/
 sudo /usr/bin/puppet apply --verbose \
   --manifestdir=${puppet_base}/manifests \
