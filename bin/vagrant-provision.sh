@@ -17,6 +17,7 @@ then
     echo "    User vagrant_ro" >> /home/co/.ssh/config
     cp /vagrant/keys/id_rsa  /home/co/.ssh/id_rsa
     cp /vagrant/keys/id_rsa.pub  /home/co/.ssh/id_rsa.pub
+    cat /vagrant/keys/id_rsa.pub >> /home/co/.ssh/authorized_keys
     chown co: /home/co/.ssh/id_rsa.pub
     chown co: /home/co/.ssh/id_rsa
     chmod 600 /home/co/.ssh/id_rsa.pub /home/co/.ssh/id_rsa
