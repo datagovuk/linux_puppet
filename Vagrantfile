@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8880, host: 8880 # nginx
   config.vm.network "forwarded_port", guest: 8881, host: 8881 # varnish
   config.vm.network "forwarded_port", guest: 8081, host: 8081 # tomcat
+  config.vm.network "forwarded_port", guest: 8080, host: 8888 # jenkins
   config.vm.network "forwarded_port", guest: 3306, host: 3366 # mysql
 
 

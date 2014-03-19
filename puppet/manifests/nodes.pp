@@ -93,6 +93,8 @@ node /.*\.dgudev/ {
   }
 
   class { 'beluga::mail_server': }
-  #include jenkins
+  class { 'jenkins':
+    configure_firewall => true,
+  }
 
 }
