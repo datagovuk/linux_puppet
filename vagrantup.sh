@@ -1,6 +1,6 @@
 #!/bin/bash
 
-    if [ ! -f /vagrant/keys ];
+    if [ ! -f /vagrant/keys/id_rsa ];
     then
         mkdir keys
         cd keys
