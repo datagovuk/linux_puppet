@@ -23,14 +23,10 @@ then
     chmod 700 /home/co/.ssh
     echo dev > /etc/role
 
-    if [ ! -f /vagrant/keys };
+    if [ ! -f /vagrant/keys/private_key.pkcs7.pem };
     then
         cd /vagrant
         eyaml  createkeys
-        cd keys
-        openssl genrsa -aes128 -passout pass:secret -out id_rsa 2048
-        openssl rsa -in id_rsa -passin pass:secret -out id_rsa.pub -pubout
-        openssl rsa -in id_rsa -passin pass:secret -out id_rsa
     fi
 
     #Temporary - need to add these to the base box?
