@@ -14,13 +14,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8888 # jenkins
   config.vm.network "forwarded_port", guest: 3306, host: 3366 # mysql
 
-
  config.vm.provider "virtualbox" do |vb|
     # allow symlinks - you are using this in a *nix host system right?
     vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     vb.customize ["modifyvm", :id, "--memory", "2048"]
-    vb.share_folder("vagrant-root", "/vagrant", ".", :nfs => true)
-    #vb.share_folder("vagrant-root", "/vagrant", ".")
  end
 
 
