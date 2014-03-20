@@ -20,17 +20,3 @@ ln -s ../dgud7/files
 sudo rm -rf /var/www/dgud7
 sudo ln -sf /vagrant/dgud7 /var/www/
 echo "You should now be able to browse to http://localhost:8000"
-echo "The dev database could be imported now. Do you want to import it (y/n)?"
-read choice
-if [[ "$choice" == "y" ]]; then
-    echo "Importing Database, please wait.."
-    #scp -v co@46.43.41.25:/var/jenkins_backups/drupal/dgu_current.sql.gz /vagrant
-    echo "Extracting Database"
-    gunzip -cfv /vagrant/dgu_current.sql.gz
-    mysql -u root -pdev dgud7 < /vagrant/dgu_current.sql
-    echo "The current dgud7 database was imported!"
-    echo "You should now be able to browse to http://localhost:8000"
-else
-    echo "The database was not imported."
-    echo "You can still browse to http://localhost:8000"
-fi
