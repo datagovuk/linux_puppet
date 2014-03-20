@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "vagrant.dgudev"
 
   config.vm.box     = "dgu-dev-1.0"
-  config.vm.box_url = "http://dev.data.gov.uk/vagrant/dgu-dev-1.0.box"
+  config.vm.box_url = "http://co-dev1.dh.bytemark.co.uk/dgu-dev-1.0.box"
 
   config.vm.network "private_network", ip: "192.168.16.10"
   config.vm.network "forwarded_port", guest: 8000, host: 8000 # apache
