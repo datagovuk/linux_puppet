@@ -17,7 +17,7 @@ drush  --db-url=mysql://root:dev@localhost/dgud7 --uri=dgud7 --root=/vagrant/dgu
 cd /vagrant/dgud7/sites/default/
 ln -s ../dgud7/settings.php
 ln -s ../dgud7/files
-rm -rf /var/www/dgud7
+sudo rm -rf /var/www/dgud7
 ln -sf /vagrant/dgud7 /var/www/
 echo "You should now be able to browse to http://localhost:8000"
 echo "The dev database could be imported now. Do you want to import it (y/n)?"
