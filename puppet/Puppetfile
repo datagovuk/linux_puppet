@@ -72,3 +72,6 @@ mod 'postfix',
 
 mod 'dgu_solr',
     :git => 'https://github.com/datagovuk/dgu_solr.git'
+
+mod 'rvm',
+    :git => 'https://github.com/SilexConsulting/puppet-rvm.git'

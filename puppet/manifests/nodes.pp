@@ -97,4 +97,8 @@ node /.*\.dgudev/ {
     configure_firewall => false,
   }
 
+  class { 'beluga::ruby_frontend':
+
+  }
+
 }
