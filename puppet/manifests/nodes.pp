@@ -101,4 +101,8 @@ node /.*\.dgudev/ {
 
   }
 
+  class { 'beluga::python_frontend':
+
+  }
+
 }
