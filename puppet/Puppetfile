@@ -75,3 +75,6 @@ mod 'dgu_solr',
 
 mod 'rvm',
     :git => 'https://github.com/SilexConsulting/puppet-rvm.git'
+
+mod 'python',
+    :git => 'https://github.com/SilexConsulting/puppet-python.git'
