@@ -78,3 +78,6 @@ mod 'rvm',
 
 mod 'python',
     :git => 'https://github.com/SilexConsulting/puppet-python.git'
+
+mod 'uwsgi',
+    :git => 'https://github.com/SilexConsulting/puppet-uwsgi.git'
