@@ -105,4 +105,7 @@ node /.*\.dgudev/ {
 
   }
 
+  class { 'beluga::postgresql_server':
+
+  }
 }

@@ -1,2 +1,3 @@
 ---
 beluga::mysql_server::admin_password: dev
+beluga::postgress_server::admin_password: password
