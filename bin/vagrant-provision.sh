@@ -23,7 +23,7 @@ then
     chmod 700 /home/co/.ssh
     echo dev > /etc/role
 
-    if [ ! -f /vagrant/keys/private_key.pkcs7.pem };
+    if [ ! -f /vagrant/keys/private_key.pkcs7.pem 1 ];
     then
         cd /vagrant
         eyaml  createkeys
