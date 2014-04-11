@@ -1,12 +1,12 @@
 #! /bin/bash
 cd /tmp
-rm -rf dgu_d7
+sudo rm -rf dgu_d7
 git clone https://github.com/datagovuk/dgu_d7.git
 cd dgu_d7
-rm -rf /home/co/dgud7
+sudo rm -rf /home/co/dgud7
 drush make --working-copy --no-gitinfofile distro.make /home/co/dgud7
 cd /home/co/dgud7
-rm -rf /home/co/dgud7/shared_dguk_assets
+sudo rm -rf /home/co/dgud7/shared_dguk_assets
 git clone https://github.com/datagovuk/shared_dguk_assets.git
 cd /home/co/dgud7/shared_dguk_assets
 npm install
