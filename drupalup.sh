@@ -18,5 +18,5 @@ sudo rm -rf /var/www/dgud7
 sudo ln -sf /home/co/dgud7 /var/www/
 cp /home/co/dgud7/profiles/dgu/sample/images/*.jpg /home/co/dgud7/sites/default/files/
 gunzip /home/co/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
-mysql -u root -pdev dgud7 < /home/co/dgud7/sample/dgud7_default_db.sql
+mysql -u root -pdev dgud7 < /home/co/dgud7/profiles/dgu/sample/dgud7_default_db.sql
 echo "You should now be able to browse to http://localhost:8000"
