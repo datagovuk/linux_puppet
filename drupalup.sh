@@ -19,10 +19,11 @@ sudo rm -rf /var/www/dgud7
 sudo ln -sf /home/co/dgud7 /var/www/
 sudo chmod -R /home/co/dgud7/sites/default/files/
 cp /home/co/dgud7/profiles/dgu/sample/images/*.jpg /home/co/dgud7/sites/default/files/
+sudo chown -R www-data:www-data /home/co/dgud7/sites/default/files/
+sudo chmod -R 777 /home/co/dgud7/sites/default/files/
 gunzip /home/co/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
 mysql -u root -pdev dgud7 < /home/co/dgud7/profiles/dgu/sample/dgud7_default_db.sql
-drush cc all
+drush composer-json-rebuild
+drush composer-manager
 drush updatedb
-drush --yes composer-json-rebuild
-drush --yes composer-manager
 echo "You should now be able to browse to http://localhost:8000"
