@@ -4,7 +4,6 @@ sudo rm -rf dgu_d7
 git clone https://github.com/datagovuk/dgu_d7.git
 cd dgu_d7
 sudo rm -rf /vagrant/dgud7
-sudo cp /vagrant/dgud7/profiles/dgu/sample/php.ini /etc/php5/apache2/php.ini
 drush make --working-copy --no-gitinfofile distro.make /vagrant/dgud7
 cd /vagrant/dgud7
 sudo rm -rf /vagrant/dgud7/shared_dguk_assets
