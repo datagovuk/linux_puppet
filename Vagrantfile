@@ -2,7 +2,6 @@ Vagrant.configure("2") do |config|
   config.ssh.username = "co"
   config.ssh.private_key_path = "keys/id_rsa"
   config.vm.hostname = "vagrant.dgudev"
-  config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
   config.vm.box     = "dgu-dev-1.0"
   config.vm.box_url = "http://co-dev1.dh.bytemark.co.uk/dgu-dev-1.0.box"
