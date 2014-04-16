@@ -101,11 +101,66 @@ node /.*\.dgudev/ {
 
   }
 
-  class { 'beluga::python_frontend':
+  #class {'ckan':
+  #  virtual_env_dir => '/tmp/ckan',
+  #}
 
-  }
+  #class { 'beluga::postgresql_server':
+  #}
 
-  class { 'beluga::postgresql_server':
-
-  }
 }
+
+node standards {
+
+  class { 'beluga':
+    stage => pre,
+  }
+  include beluga::developer_tools
+
+  class { 'beluga::facts::role':
+    stage => pre,
+    role => 'dev',
+  }
+
+  $lamp_servers = {
+  name          => 'lamp_servers',
+  host          => '127.0.0.1',
+  port          => 8000,
+  upstream_port => 8881
+  }
+
+  $lamp_admin_servers = {
+  name          => 'lamp_admin_servers',
+  host          => '127.0.0.1',
+  port          => 8000,
+  upstream_port => 8000
+  }
+
+  $solr_servers = {
+  name          => 'solr',
+  host          => '127.0.0.1',
+  port          => 8081,
+  upstream_port => 8080
+  }
+
+  class { "beluga::frontend_traffic_director":
+    lamp_servers              => $lamp_servers,
+    lamp_admin_servers        => $lamp_admin_servers,
+    solr_servers              => $solr_servers,
+    frontend_domain           => 'standards',
+    backend_domain            => 'standards',
+  }
+
+  class {'beluga::apache_frontend_server':
+    domain_name               => 'standards',
+    owner                     => 'co',
+    group                     => 'co'
+  }
+
+  class {'beluga::mysql_server':
+  }
+
+  class { 'beluga::drush_server': }
+
+}
+
