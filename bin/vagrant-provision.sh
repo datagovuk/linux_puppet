@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-puppet_base='/vagrant/puppet/'
+puppet_base='/vagrant/puppet'
 to_provision='/vagrant/puppet/manifests/site.pp'
 
 if [ -f /vagrant/vagrant.pp ] ;
