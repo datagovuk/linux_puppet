@@ -2,11 +2,6 @@ stage { 'pre':
   before => Stage['main'],
 }
 
-node default {
-  crit( "Node only matched \"default\" for which there is no configuration, $::hostname" )
-}
-
-
 node /.*\.dgudev/ {
 
   # Thinking of modifying this for your own needs?
