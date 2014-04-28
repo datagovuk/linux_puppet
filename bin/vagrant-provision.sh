@@ -23,11 +23,6 @@ then
     chmod 700 /home/co/.ssh
     echo dev > /etc/role
 
-    if [ ! -f /vagrant/keys/private_key.pkcs7.pem ];
-    then
-        cd /vagrant
-        eyaml  createkeys
-    fi
 
     #Temporary - need to add these to the base box?
     apt-get update
@@ -39,6 +34,12 @@ then
     #Update puppet module dependencies using librarian-puppet
     cd /vagrant/puppet
     sudo librarian-puppet update
+
+    if [ ! -f /vagrant/keys/private_key.pkcs7.pem ];
+    then
+        cd /vagrant
+        eyaml  createkeys
+    fi
 fi
 
 
