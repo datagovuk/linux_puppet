@@ -2,6 +2,8 @@
 
 set -e
 
+export PATH=$PATH:/usr/local/node/node-v0.10.26/bin
+
 cd /tmp
 sudo rm -rf dgu_d7
 git clone https://github.com/datagovuk/dgu_d7.git
