@@ -1,4 +1,9 @@
 #! /bin/bash
+
+set -e
+
+export PATH=$PATH:/usr/local/node/node-v0.10.26/bin
+
 cd /tmp
 sudo rm -rf dgu_d7
 git clone https://github.com/datagovuk/dgu_d7.git
@@ -12,7 +17,7 @@ cd /vagrant/dgud7/shared_dguk_assets
 npm install
 grunt
 cd /vagrant/dgud7
-ln -s /vagrant/dgud7/shared_dguk_assets/assets
+ln -s ./shared_dguk_assets/assets
 drush  --db-url=mysql://root:dev@localhost/dgud7 --uri=dgud7 --root=/vagrant/dgud7 --yes --verbose site-install dgu --sites-subdir=default --account-name=admin --account-pass=admin --site-mail='dgud7-info@vagrant.dgudev' --site-name='dgud7' --yes
 sudo rm -rf /var/www/dgud7
 sudo ln -sf /vagrant/dgud7 /var/www/
