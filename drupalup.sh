@@ -26,7 +26,7 @@ cp /vagrant/dgud7/profiles/dgu/sample/images/*.jpg /vagrant/dgud7/sites/default/
 sudo chown -R www-data:co /vagrant/dgud7/sites/default/files/
 gunzip /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
 mysql -u root -pdev dgud7 < /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql
-drush composer-json-rebuild
-drush composer-manager
-drush updatedb
+drush -y composer-json-rebuild
+drush -y composer-manager
+drush -y updatedb
 echo "You should now be able to browse to http://localhost:8000"
