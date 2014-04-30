@@ -1,4 +1,7 @@
 #! /bin/bash
+
+set -e
+
 cd /tmp
 sudo rm -rf dgu_d7
 git clone https://github.com/datagovuk/dgu_d7.git
