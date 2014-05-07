@@ -22,7 +22,7 @@ drush  --db-url=mysql://root:dev@localhost/dgud7 --uri=dgud7 --root=/vagrant/dgu
 sudo rm -rf /var/www/dgud7
 sudo ln -sf /vagrant/dgud7 /var/www/
 cp -R /vagrant/dgud7/profiles/dgu/sample/images/files /vagrant/dgud7/sites/default/
-gunzip /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
+gunzip -k /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
 mysql -u root -pdev dgud7 < /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql
 drush -y composer-json-rebuild
 drush -y composer-manager
@@ -30,4 +30,4 @@ drush -y updatedb
 mv /vagrant/dgud7/sites/default/files/ /home/co/files/
 sudo chown -R www-data:www-data /home/co/files
 ln -s /home/co/files /vagrant/dgud7/sites/default/
-echo "Please check to see if there were any errors, If not you should now be able to browse to http://localhost:8000"
+echo "You should now be able to browse to http://localhost:8000"
