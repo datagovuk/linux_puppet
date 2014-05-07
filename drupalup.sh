@@ -30,4 +30,4 @@ drush -y updatedb
 mv /vagrant/dgud7/sites/default/files/ /home/co/files/
 sudo chown -R www-data:www-data /home/co/files
 ln -s /home/co/files /vagrant/dgud7/sites/default/
-echo "Please check to see if there were any errors, If not you should now be able to browse to http://localhost:8000"
+echo "You should now be able to browse to http://localhost:8000"
