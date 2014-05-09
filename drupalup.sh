@@ -22,8 +22,7 @@ drush  --db-url=mysql://root:dev@localhost/dgud7 --uri=dgud7 --root=/vagrant/dgu
 sudo rm -rf /var/www/dgud7
 sudo ln -sf /vagrant/dgud7 /var/www/
 cp -R /vagrant/dgud7/profiles/dgu/sample/images/files /vagrant/dgud7/sites/default/
-gunzip -k /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz
-mysql -u root -pdev dgud7 < /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql
+zcat /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz | mysql -u root -pdev dgud7
 drush -y composer-json-rebuild
 drush -y composer-manager
 drush -y updatedb
