@@ -1,5 +1,9 @@
-stage { 'pre':
-  before => Stage['main'],
+node default {
+crit( "Node only matched \"default\" for which there is no configuration, $::hostname" )
+/*
+
+
+*/
 }
 
 node /.*\.dgudev/ {
@@ -102,8 +106,10 @@ node /.*\.dgudev/ {
 
   #class { 'beluga::postgresql_server':
   #}
+  include dgu_users
 
 }
+
 
 node standards {
 

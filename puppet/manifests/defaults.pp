@@ -23,7 +23,6 @@ path => [
 $extlookup_datadir = "${settings::manifestdir}/extdata"
 $extlookup_precedence = ["%{fqdn}", "domain_%{domain}", "common"]
 
-
-node default {
-  crit( "Node only matched \"default\" for which there is no configuration, $::hostname" )
-}
+# Run Stages
+stage { 'register': before => Stage['pre'] }
+stage { 'pre': before => Stage['main'] }
