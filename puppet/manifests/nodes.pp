@@ -1,5 +1,5 @@
 node default {
-crit( "Node only matched \"default\" for which there is no configuration, $::hostname" )
+  crit( "Node only matched \"default\" for which there is no configuration, $::hostname" )
 }
 
 node /.*\.dgudev/ {
