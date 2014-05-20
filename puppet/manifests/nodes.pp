@@ -4,6 +4,8 @@ node default {
 
 node /.*\.dgudev/ {
 
+  include dgu_defaults
+
   # Thinking of modifying this for your own needs?
   # Don't! Create 'vagrant.pp' in the same directory
   # as your Vagrantfile and the vagrant provisioner
@@ -102,12 +104,13 @@ node /.*\.dgudev/ {
 
   #class { 'beluga::postgresql_server':
   #}
-  include dgu_users
 
 }
 
 
 node standards {
+
+  include dgu_defaults
 
   class { 'beluga':
     stage => pre,
