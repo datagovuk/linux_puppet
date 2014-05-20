@@ -26,3 +26,5 @@ $extlookup_precedence = ["%{fqdn}", "domain_%{domain}", "common"]
 # Run Stages
 stage { 'register': before => Stage['pre'] }
 stage { 'pre': before => Stage['main'] }
+stage { 'post': }
+Stage['main'] -> Stage['post']
