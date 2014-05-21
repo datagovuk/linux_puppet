@@ -120,37 +120,31 @@ node standards {
   }
 
   $lamp_servers = {
-  name          => 'lamp_servers',
-  host          => '127.0.0.1',
-  port          => 8000,
-  upstream_port => 8881
+    name          => 'lamp_servers',
+    host          => '127.0.0.1',
+    port          => 8000,
+    upstream_port => 8881
   }
 
   $lamp_admin_servers = {
-  name          => 'lamp_admin_servers',
-  host          => '127.0.0.1',
-  port          => 8000,
-  upstream_port => 8000
+    name          => 'lamp_admin_servers',
+    host          => '127.0.0.1',
+    port          => 8000,
+    upstream_port => 8000
   }
 
   $solr_servers = {
-  name          => 'solr',
-  host          => '127.0.0.1',
-  port          => 8081,
-  upstream_port => 8080
+    name          => 'solr',
+    host          => '127.0.0.1',
+    port          => 8081,
+    upstream_port => 8080
   }
-  $extra_backends = {
-  name          => 'ckan_server',
-  host          => '127.0.0.1',
-  port          => 8000,
-  upstream_port => 8000
-  }
+
 
   class { "beluga::frontend_traffic_director":
     lamp_servers              => $lamp_servers,
     lamp_admin_servers        => $lamp_admin_servers,
     solr_servers              => $solr_servers,
-    extra_backends            => $extra_backends,
     frontend_domain           => 'standards',
     backend_domain            => 'standards',
   }
