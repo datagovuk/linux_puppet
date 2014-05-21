@@ -85,9 +85,6 @@ node /.*\.dgudev/ {
   }
 
   class { 'beluga::drush_server': }
-  class { 'nodejs':
-    version => 'v0.10.26',
-  }
 
   class { 'beluga::mail_server': }
   class { 'jenkins':
