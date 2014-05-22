@@ -1,0 +1,5 @@
+--
+sudo::configs:
+    'epimorphics':
+        'content'   : "epimorphics ALL=(ALL) NOPASSWD: ALL"
+        'priority'  : 10

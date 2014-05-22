@@ -1,7 +1,11 @@
+class all_defaults{
+  class {'sudo': }
+
+}
 class dgu_defaults{
+  class {'all_defaults': }
   class {'dgu_users': } ->
   class {'dgu_keys': }
-
 }
 
 class dgu_users {
@@ -67,6 +71,7 @@ class epimorphics_keys {
 }
 
 class epimorphics_defaults {
+  class {'all_defaults': }
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }

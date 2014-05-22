@@ -1,3 +1,7 @@
 ---
 beluga::mysql_server::admin_password: ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQAwDQYJKoZIhvcNAQEBBQAEggEAaznSoZABgxyXZt2tGRLNaE/k4T2ibP99jv1BCIHg/F04K+cAp/YGIPhccld5fHPLwUhCMkRb19wKbnNXEAVCHJoyyFb/8W0iesk4BEmpiBrI8zeuV0FIXb0G15W3WOK54cUZ2kmM/507D29np50vpD0ao/KyVpRgVSJSvFHUq8PNRu4F2noDXCo9bXK3cbGO+mPAEbemiaGFCsLaqteAeLHw8x9dHif0l2Wotmc3TywjANHo/7N1nxnl6ihGhn4wNH/Xfj6yOSOIWI3i+q3g+JjxD5hXnyTXo8geeSXcEj5opZyKweq18gx6KnPpKisLCooyfNYq16bsBvOv009krTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBD9dl5DUc+iu9ZG37xN9elNgBCx0r4KhxAa78Cm/62yWIs5] 
 beluga::mysql_server::admin_user: root
+sudo::configs:
+    'admins':
+        'content'   : "%admins ALL=(ALL) NOPASSWD: ALL"
+        'priority'  : 10
