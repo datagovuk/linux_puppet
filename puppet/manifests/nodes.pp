@@ -162,3 +162,11 @@ node standards {
 
 }
 
+
+node dataconversion {
+include epimorphics_defaults
+}
+
+node dataservice {
+include epimorphics_defaults
+}
