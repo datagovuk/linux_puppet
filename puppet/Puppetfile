@@ -46,6 +46,9 @@ mod 'postgresql',
 mod 'solr',
     :git => 'https://github.com/SilexConsulting/puppet-solr.git'
 
+mod 'sudo',
+    :git => 'https://github.com/SilexConsulting/puppet-sudo.git'
+
 mod 'tomcat',
     :git => 'https://github.com/SilexConsulting/puppet-tomcat.git'
 
