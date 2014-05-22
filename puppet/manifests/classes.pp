@@ -51,3 +51,22 @@ class dgu_keys {
   }
 
 }
+
+class epimorphics_users {
+  beluga::user {'epimorphics':
+    uid => 6000,
+  }
+}
+
+class epimorphics_keys {
+  beluga::user::key {'dave@epimorphics.com':
+    user => 'epimorphics',
+    ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC42Ox+TLOfsTsb1kKybfj3WPOzrEjlfRnL8n1fl0218PLfSbpgaY7pUZZyoptfS5mpSTn3vzvmswib5nEY6wDM94PMdhZtjTIlfy6v84yoibq/Qn3PyVD72V7/lsKchuMElzLtFhPVptNu/OZ4vhkuj9k+z/PL2+RfqULUE+gQcomCYccGvdqu74/BX8QZqLkdygElksO7MSI4ohS//P73eCynqdI4cRAZf9V3CktQySesmYaFW3pdCgYhLq4XWMREcGlGw9aZ0W/uQYo9vw98MqCtThJPY/sW5ZgiTAOjtDRDXVIN45t96Zy5Y0Fbv677UOnZDdLVaoEdxIqlIuYv',
+    key_type => 'ssh-rsa',
+  }
+}
+
+class epimorphics_defaults {
+  class {'epimorphics_users': } ->
+  class {'epimorphics_keys': }
+}
