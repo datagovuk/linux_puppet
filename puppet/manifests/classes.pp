@@ -56,6 +56,15 @@ class dgu_keys {
 
 }
 
+class dgu_groups {
+  group {
+    "admins":
+    ensure  => present,
+    gid     => xxxxx;
+  }
+
+}
+
 class epimorphics_users {
   beluga::user {'epimorphics':
     uid => 6000,
@@ -71,6 +80,10 @@ class epimorphics_keys {
 }
 
 class epimorphics_defaults {
+  class { 'beluga::facts::role':
+    stage => pre,
+    role => 'epimorphics',
+  }
   class {'all_defaults': }
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
