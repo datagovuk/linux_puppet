@@ -65,7 +65,7 @@ class dgu_groups {
   group {
     "admins":
     ensure  => present,
-    gid     => xxxxx;
+    gid     => 7000;
   }
 }
 
