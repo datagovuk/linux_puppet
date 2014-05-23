@@ -12,9 +12,6 @@ node /.*\.dgudev/ {
   # will use that instead.
   #include beluga::defaults
 
-  class { 'beluga':
-    stage => pre,
-  }
   include beluga::developer_tools
 
   class { 'beluga::facts::role':
@@ -109,9 +106,6 @@ node standards {
 
   include dgu_defaults
 
-  class { 'beluga':
-    stage => pre,
-  }
   include beluga::developer_tools
 
   class { 'beluga::facts::role':

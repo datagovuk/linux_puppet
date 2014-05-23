@@ -1,6 +1,8 @@
 class all_defaults{
+  class { 'beluga':
+    stage => pre,
+  }
   class {'sudo': }
-
 }
 class dgu_defaults{
   class {'all_defaults': }
@@ -53,7 +55,6 @@ class dgu_keys {
     ssh_key => 'AAAAB3NzaC1yc2EAAAABIwAAAQEAyd/uQuz+TAekzlXN0BJjxjdQhhjw/ilVZrjatVwZqBc92gR0vb4GqK3N1FIxKxnQ5ITFktiJuIV3t6FLtG6kjrZWpir0su4qQaAtk3OvZy4m0yDeYyBgUewRWJ8LkRKc1jE/V4KQWfUGFnp8FAkf3Z7WWuMsrmPbyXeKxhhXAWA+twMPG/eal7GYplA+7Vs5HMeqLsneOKlOIFORoE6c5Wro/jZtd+zZtjVOusZcL4ivlaj9SjjcAV71RjQdWR/WwAmewA9DE8QSKNwCbbC4t9Wt7MMyQAFnCS7fOBn54/Pmchc71wYr5s/2/z3m6CCTmamA5tA5nbIuPjZIiaT4cw==',
     key_type => 'ssh-rsa'
   }
-
 }
 
 class dgu_groups {
@@ -62,7 +63,6 @@ class dgu_groups {
     ensure  => present,
     gid     => xxxxx;
   }
-
 }
 
 class epimorphics_users {
@@ -81,7 +81,11 @@ class epimorphics_keys {
 
 class epimorphics_defaults {
 
-  class {'dgu_defaults': } ->
+  class { 'beluga::facts::role':
+    stage => pre,
+    role => 'epimorphics',
+  } ->
+  class {'dgu_defaults': }
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }
