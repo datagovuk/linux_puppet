@@ -84,8 +84,8 @@ class epimorphics_defaults {
   class { 'beluga::facts::role':
     stage => pre,
     role => 'epimorphics',
-  }
-  class {'dgu_defaults': }
+  } ->
+  class {'dgu_defaults': }  
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }
