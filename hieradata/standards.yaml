@@ -1,0 +1,4 @@
+---
+beluga::frontend_traffic_director::frontend_domain: 'standards'
+beluga::frontend_traffic_director::backend_domain: 'standards'
+beluga::apache_frontend_server::domain_name: 'standards'

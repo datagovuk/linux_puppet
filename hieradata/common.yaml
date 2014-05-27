@@ -5,3 +5,5 @@ sudo::configs:
     'admins':
         'content'   : "%admins ALL=(ALL) NOPASSWD: ALL"
         'priority'  : 10
+beluga::apache_frontend_server::owner: co
+beluga::apache_frontend_server::group: co

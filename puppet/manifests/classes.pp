@@ -2,13 +2,16 @@ class all_defaults{
   class { 'beluga':
     stage => pre,
   }
-  class {'sudo': }
 }
 class dgu_defaults{
   class {'all_defaults': }
   class {'dgu_groups': } ->
   class {'dgu_users': } ->
   class {'dgu_keys': }
+}
+
+class prod_defaults {
+  class {'sudo': }
 }
 
 class dgu_users {
@@ -89,7 +92,7 @@ class epimorphics_defaults {
     stage => pre,
     role => 'epimorphics',
   } ->
-  class {'dgu_defaults': }
+  class {'prod_defaults': }
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }

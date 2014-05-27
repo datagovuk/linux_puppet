@@ -3,6 +3,10 @@ node default {
 }
 
 node /.*\.dgudev/ {
+  class { 'sudo':
+    purge               => false,
+    config_file_replace => false,
+  }
 
   include dgu_defaults
 
@@ -14,55 +18,18 @@ node /.*\.dgudev/ {
 
   include beluga::developer_tools
 
+
+
   class { 'beluga::facts::role':
     stage => pre,
     role => 'dev',
   }
-
-  $lamp_servers = {
-    name          => 'lamp_servers',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8881
+  class { 'beluga::facts::site':
+    stage => pre,
+    site => 'standards',
   }
-
-  $lamp_admin_servers = {
-    name          => 'lamp_admin_servers',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8000
-  }
-
-  $graylog_servers = {
-    name          => 'graylog',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8000
-  }
-
-  $solr_servers = {
-    name          => 'solr',
-    host          => '127.0.0.1',
-    port          => 8081,
-    upstream_port => 8080
-  }
-
-  $extra_backends = {
-    name          => 'ckan_server',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8000
-  }
-
-  $extra_selectors = { backend => 'ckan_server', condition => 'req.http.host ~ "^ckan."'}
-
 
   class { "beluga::frontend_traffic_director":
-    graylog_servers           => $graylog_servers,
-    lamp_servers              => $lamp_servers,
-    lamp_admin_servers        => $lamp_admin_servers,
-    solr_servers              => $solr_servers,
-    extra_backends            => $extra_backends,
     extra_selectors           => $extra_selectors,
     frontend_domain           => 'dgud7',
     backend_domain            => 'dgud7',
@@ -104,7 +71,7 @@ node /.*\.dgudev/ {
 
 node standards {
 
-  include dgu_defaults
+  include prod_defaults
 
   include beluga::developer_tools
 
@@ -112,41 +79,15 @@ node standards {
     stage => pre,
     role => 'prod',
   }
-
-  $lamp_servers = {
-    name          => 'lamp_servers',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8881
+  class { 'beluga::facts::site':
+    stage => pre,
+    site => 'standards',
   }
-
-  $lamp_admin_servers = {
-    name          => 'lamp_admin_servers',
-    host          => '127.0.0.1',
-    port          => 8000,
-    upstream_port => 8000
-  }
-
-  $solr_servers = {
-    name          => 'solr',
-    host          => '127.0.0.1',
-    port          => 8081,
-    upstream_port => 8080
-  }
-
 
   class { "beluga::frontend_traffic_director":
-    lamp_servers              => $lamp_servers,
-    lamp_admin_servers        => $lamp_admin_servers,
-    solr_servers              => $solr_servers,
-    frontend_domain           => 'standards',
-    backend_domain            => 'standards',
   }
 
   class {'beluga::apache_frontend_server':
-    domain_name               => 'standards',
-    owner                     => 'co',
-    group                     => 'co'
   }
 
   class {'beluga::mysql_server':
