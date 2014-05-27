@@ -99,9 +99,12 @@ node standards {
 
 
 node dataconversion {
-include epimorphics_defaults
+  include epimorphics_defaults
+  class { "tomcat":
+    http_port => 8081,
+  }
 }
 
 node dataservice {
-include epimorphics_defaults
+  include epimorphics_defaults
 }
