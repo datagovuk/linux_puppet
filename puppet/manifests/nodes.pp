@@ -59,6 +59,8 @@ node /.*\.dgudev/ {
 
   }
 
+  include orgdc
+
   #class {'ckan':
   #  virtual_env_dir => '/tmp/ckan',
   #}
@@ -103,6 +105,7 @@ node dataconversion {
   class { "tomcat":
     http_port => 8080,
   }
+  include orgdc
 }
 
 node dataservice {

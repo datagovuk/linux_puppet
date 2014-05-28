@@ -36,6 +36,9 @@ mod 'ntp',
 mod 'openldap',
     :git => 'https://github.com/SilexConsulting/puppetlabs-openldap.git'
 
+mod 'orgdc',
+    :git => 'https://github.com/SilexConsulting/puppet-orgdc.git'
+
 mod 'stdlib',
     :git => 'https://github.com/SilexConsulting/puppetlabs-stdlib.git',
     :ref => '3.2.1'
