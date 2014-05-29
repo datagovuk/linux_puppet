@@ -14,7 +14,6 @@ node /.*\.dgudev/ {
   # Don't! Create 'vagrant.pp' in the same directory
   # as your Vagrantfile and the vagrant provisioner
   # will use that instead.
-  #include beluga::defaults
 
   include beluga::developer_tools
 
