@@ -17,12 +17,11 @@ node /.*\.dgudev/ {
 
   include beluga::developer_tools
 
-
-
   class { 'beluga::facts::role':
     stage => pre,
     role => 'dev',
   }
+
   class { 'beluga::facts::site':
     stage => pre,
     site => 'standards',
@@ -44,29 +43,19 @@ node /.*\.dgudev/ {
     source_dir => "puppet:///modules/dgu_solr/solr",
   }
 
-  class {'beluga::mysql_server':
-  }
+  class {'beluga::mysql_server': }
 
   class { 'beluga::drush_server': }
 
   class { 'beluga::mail_server': }
+
   class { 'jenkins':
     configure_firewall => false,
   }
 
-  class { 'beluga::ruby_frontend':
-
-  }
+  class { 'beluga::ruby_frontend':  }
 
   include orgdc
-
-  #class {'ckan':
-  #  virtual_env_dir => '/tmp/ckan',
-  #}
-
-  #class { 'beluga::postgresql_server':
-  #}
-
 }
 
 
