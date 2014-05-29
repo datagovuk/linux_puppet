@@ -11,6 +11,7 @@ class dgu_defaults{
 }
 
 class prod_defaults {
+  class {'dgu_defaults': }
   class {'sudo': }
 }
 
@@ -93,7 +94,7 @@ class epimorphics_defaults {
     stage => pre,
     role => 'epimorphics',
   } ->
-  class {'prod_defaults': }
+  class {'prod_defaults': } ->
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }
