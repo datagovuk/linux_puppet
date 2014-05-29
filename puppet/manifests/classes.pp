@@ -13,6 +13,18 @@ class dgu_defaults{
 class prod_defaults {
   class {'dgu_defaults': }
   class {'sudo': }
+  host {'puppet':
+    ip => '46.43.41.19'
+  }
+  host {'standards':
+    ip => '46.43.41.17'
+  }
+  host {'dataconverter':
+    ip => '46.43.41.16'
+  }
+  host {'dataservice':
+    ip => '46.43.41.18'
+  }
 }
 
 class dgu_users {
