@@ -69,16 +69,15 @@ node standards {
     stage => pre,
     role => 'prod',
   }
+
   class { 'beluga::facts::site':
     stage => pre,
     site => 'standards',
   }
 
-  class {'beluga::apache_frontend_server':
-  }
+  class {'beluga::apache_frontend_server': }
 
-  class {'beluga::mysql_server':
-  }
+  class {'beluga::mysql_server': }
 
   class { 'beluga::drush_server': }
 
