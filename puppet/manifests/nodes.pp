@@ -83,6 +83,9 @@ node standards {
 
 }
 
+node puppetmaster {
+  include prod_defaults
+}
 
 node dataconversion {
   include epimorphics_defaults
