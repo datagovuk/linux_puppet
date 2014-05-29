@@ -43,6 +43,8 @@ node /.*\.dgudev/ {
     source_dir => "puppet:///modules/dgu_solr/solr",
   }
 
+
+
   class {'beluga::mysql_server': }
 
   class { 'beluga::drush_server': }
@@ -51,7 +53,7 @@ node /.*\.dgudev/ {
 
   class { 'jenkins':
     configure_firewall => false,
-  }
+  } 
 
   class { 'beluga::ruby_frontend':  }
 
@@ -91,6 +93,7 @@ node dataconversion {
   include epimorphics_defaults
   include java
   class { "tomcat":
+    java_home => $java::java_home,
     http_port => 8080,
   }
   include orgdc
