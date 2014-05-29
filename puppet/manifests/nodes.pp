@@ -86,9 +86,6 @@ node standards {
     site => 'standards',
   }
 
-  class { "beluga::frontend_traffic_director":
-  }
-
   class {'beluga::apache_frontend_server':
   }
 
