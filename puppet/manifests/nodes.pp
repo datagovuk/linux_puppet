@@ -53,7 +53,7 @@ node /.*\.dgudev/ {
 
   class { 'jenkins':
     configure_firewall => false,
-  } 
+  }
 
   class { 'beluga::ruby_frontend':  }
 
@@ -101,4 +101,9 @@ node dataconversion {
 
 node dataservice {
   include epimorphics_defaults
+  include java
+  class { "tomcat":
+    java_home => $java::java_home,
+    http_port => 8080,
+  }
 }
