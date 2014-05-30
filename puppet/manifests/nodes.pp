@@ -65,7 +65,9 @@ node standards {
 
   include prod_defaults
 
-  include beluga::developer_tools
+  class {"beluga::developer_tools":
+    install_git => true,
+  }
 
   class { 'beluga::facts::role':
     stage => pre,
