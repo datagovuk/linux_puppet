@@ -109,3 +109,12 @@ node dataservice {
     http_port => 8080,
   }
 }
+
+node epdev {
+  include epimorphics_defaults
+  include java
+  class { "tomcat":
+    java_home => $java::java_home,
+    http_port => 8080,
+  }
+}
