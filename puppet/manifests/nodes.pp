@@ -15,7 +15,10 @@ node /.*\.dgudev/ {
   # as your Vagrantfile and the vagrant provisioner
   # will use that instead.
 
-  include beluga::developer_tools
+  class {"beluga::developer_tools":
+    install_git => true,
+    install_vim => true,
+  }
 
   class { 'beluga::facts::role':
     stage => pre,
