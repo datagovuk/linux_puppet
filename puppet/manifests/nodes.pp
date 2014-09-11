@@ -25,11 +25,6 @@ node /.*\.dgudev/ {
     role => 'dev',
   }
 
-  class { 'beluga::facts::site':
-    stage => pre,
-    site => 'standards',
-  }
-
   class { "beluga::frontend_traffic_director":
     extra_selectors           => $extra_selectors,
     frontend_domain           => 'dgud7',
