@@ -42,11 +42,10 @@ node /.*\.dgudev/ {
     group                     => 'co'
   }
 
-  class {'beluga::caching_server':
+  class { 'solr':
     source_dir => "puppet:///modules/dgu_solr/solr",
+    source_dir_purge => true,
   }
-
-
 
   class {'beluga::mysql_server': }
 
