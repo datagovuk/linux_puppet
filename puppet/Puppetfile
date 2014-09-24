@@ -12,8 +12,14 @@ mod 'apache',
 mod 'concat',
     :git => 'https://github.com/SilexConsulting/puppetlabs-concat.git'
 
+mod 'elda',
+    :git => 'https://github.com/SilexConsulting/puppet-elda.git'
+
 mod 'puppetlabs/firewall',
     :git => 'https://github.com/SilexConsulting/puppetlabs-firewall.git'
+
+mod 'fuseki',
+    :git => 'https://github.com/SilexConsulting/puppet-fuseki.git'
 
 mod 'gitlab',
     :git => 'https://github.com/SilexConsulting/puppet-gitlab.git'
@@ -45,6 +51,9 @@ mod 'stdlib',
 
 mod 'postgresql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-postgresql'
+
+mod 'referencetimeserver',
+    :git => 'https://github.com/SilexConsulting/puppet-referencetimeserver.git'
 
 mod 'solr',
     :git => 'https://github.com/SilexConsulting/puppet-solr.git'
