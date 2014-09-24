@@ -20,11 +20,6 @@ node /.*\.dgudev/ {
     install_vim => true,
   }
 
-  class { 'beluga::facts::role':
-    stage => pre,
-    role => 'dev',
-  }
-
   class { "beluga::frontend_traffic_director":
     extra_selectors           => $extra_selectors,
     frontend_domain           => 'dgud7',
@@ -41,6 +36,7 @@ node /.*\.dgudev/ {
     source_dir => "puppet:///modules/dgu_solr/solr",
     source_dir_purge => true,
   }
+
 
   class {'beluga::mysql_server': }
 
