@@ -66,16 +66,6 @@ node standards {
     install_git => true,
   }
 
-  class { 'beluga::facts::role':
-    stage => pre,
-    role => 'prod',
-  }
-
-  class { 'beluga::facts::site':
-    stage => pre,
-    site => 'standards',
-  }
-
   class {'beluga::apache_frontend_server': }
 
   class {'beluga::mysql_server': }
