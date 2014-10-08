@@ -82,7 +82,6 @@ node dataconversion {
   include epimorphics_defaults
   include java
   class { "tomcat":
-    java_home => $java::java_home,
   }
   include orgdc
 }
@@ -91,7 +90,6 @@ node dataservice {
   include epimorphics_defaults
   include java
   class { "tomcat":
-    java_home => $java::java_home,
   }
 }
 
@@ -99,6 +97,5 @@ node epdev {
   include epimorphics_defaults
   include java
   class { "tomcat":
-    java_home => $java::java_home,
   }
 }
