@@ -142,7 +142,8 @@ class standards_site {
   apache::vhost { 'standards.data.gov.uk':
     override      => 'All',
     port          => 80,
-    virtual_docroot => '/var/www/drupal/standards/current',
+    manage_docroot  => false,
+    docroot       => '/var/www/drupal/standards/current',
     docroot_owner => 'co',
     docroot_group => 'co',
     serveradmin   => 'support@dguteam.org.uk',
