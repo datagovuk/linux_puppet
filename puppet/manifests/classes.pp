@@ -110,3 +110,19 @@ class epimorphics_defaults {
   class {'epimorphics_users': } ->
   class {'epimorphics_keys': }
 }
+
+class standards_vhost {
+  apache::vhost { 'standards.data.gov.uk':
+    override      => 'All',
+    port          => 80,
+    docroot       => '/var/www/drupal/standards/current',
+    docroot_owner => 'co',
+    docroot_group => 'co',
+    serveradmin   => 'support@dguteam.org.uk',
+    serveraliases => [
+      'standards.dguteam.org.uk',
+      'standards'],
+    log_level     => 'warn',
+    logroot => '/var/www/drupal/standards/logs/',
+  }
+}
