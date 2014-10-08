@@ -111,7 +111,24 @@ class epimorphics_defaults {
   class {'epimorphics_keys': }
 }
 
-class standards_vhost {
+class standards_site {
+
+  mysql_user { ["standards@%"]:
+    ensure => 'present',
+    password_hash => mysql_password('standardspassword'),
+  } ->
+
+  mysql_grant { ["standards@%"]:
+    ensure     => 'present',
+    options    => ['GRANT'],
+    privileges => ['ALL'],
+    table      => '*.*',
+    user       => ["standards@%"],
+  }
+  mysql_database { 'standards':
+      ensure  => 'present',
+      charset => 'utf8',
+  }
   file {['/var/www/private/', '/var/www/private/standards/','/var/www/files/', '/var/www/files/standards/', '/var/www/drupal/','/var/www/drupal/standards/']:
     ensure => 'directory',
     owner => 'co',

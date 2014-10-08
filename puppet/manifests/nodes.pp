@@ -71,7 +71,7 @@ node standards {
   class {'beluga::mysql_server': }
 
   class { 'beluga::drush_server': }
-  include standards_vhost
+  include standards_site
 
 }
 
