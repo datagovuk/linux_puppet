@@ -112,7 +112,7 @@ class epimorphics_defaults {
 }
 
 class standards_vhost {
-  file {'/var/www/drupal/standards/':
+  file {['/var/www/drupal/','/var/www/drupal/standards/']:
     ensure => 'directory',
     owner => 'co',
     group => 'co',
