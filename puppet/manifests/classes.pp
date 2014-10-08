@@ -112,6 +112,16 @@ class epimorphics_defaults {
 }
 
 class standards_vhost {
+  file {'/var/www/drupal/standards/':
+    ensure: 'directory',
+    owner: 'co',
+    group: 'co',
+  }
+  file {'/var/www/drupal/standards/logs':
+    ensure: 'directory',
+    owner: 'www-data',
+    group: 'www-data',
+  }
   apache::vhost { 'standards.data.gov.uk':
     override      => 'All',
     port          => 80,
