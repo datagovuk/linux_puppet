@@ -83,7 +83,6 @@ node dataconversion {
   include java
   class { "tomcat":
     java_home => $java::java_home,
-    http_port => 8080,
   }
   include orgdc
 }
@@ -93,7 +92,6 @@ node dataservice {
   include java
   class { "tomcat":
     java_home => $java::java_home,
-    http_port => 8080,
   }
 }
 
@@ -102,6 +100,5 @@ node epdev {
   include java
   class { "tomcat":
     java_home => $java::java_home,
-    http_port => 8080,
   }
 }
