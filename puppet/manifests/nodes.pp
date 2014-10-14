@@ -51,6 +51,7 @@ node /.*\.dgudev/ {
   class { 'beluga::ruby_frontend':  }
 
   include orgdc
+  include ckan
 }
 
 
