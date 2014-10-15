@@ -26,12 +26,6 @@ node /.*\.dgudev/ {
     backend_domain            => 'dgud7',
   }
 
-  class {'beluga::apache_frontend_server':
-    domain_name               => 'dgud7',
-    owner                     => 'co',
-    group                     => 'co'
-  }
-
   class { 'solr':
     source_dir => "puppet:///modules/dgu_solr/solr",
     source_dir_purge => true,
