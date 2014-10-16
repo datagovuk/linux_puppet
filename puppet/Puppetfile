@@ -52,6 +52,9 @@ mod 'stdlib',
 mod 'postgresql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-postgresql'
 
+mod 'redis',
+    :git => 'https://github.com/SilexConsulting/puppet-redis'
+
 mod 'referencetimeserver',
     :git => 'https://github.com/SilexConsulting/puppet-referencetimeserver.git'
 
