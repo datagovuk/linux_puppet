@@ -132,7 +132,8 @@ class standards_site {
   file {['/var/www/private/', '/var/www/private/standards/','/var/www/files/', '/var/www/files/standards/', '/var/www/drupal/','/var/www/drupal/standards/']:
     ensure => 'directory',
     owner => 'co',
-    group => 'co',
+    group => 'www-data',
+    mode => 775,
   }
   file {'/var/www/drupal/standards/logs':
     ensure => 'directory',
@@ -151,6 +152,6 @@ class standards_site {
       'standards.dguteam.org.uk',
       'standards'],
     log_level     => 'warn',
-    logroot => '/var/www/drupal/standards/logs/',
+    logroot => '/var/www/drupal/standards/logs',
   }
 }
