@@ -39,13 +39,6 @@ node /.*\.dgudev/ {
     configure_firewall        => false,
   }
 
-  class { 'python':
-    dev                       => true,  # required for pip to install dependencies
-    pip                       => true,
-    version                   => 'system',
-    virtualenv                => true,
-  }
-
   class { 'solr':
     source_dir                => "puppet:///modules/dgu_solr/solr",
     source_dir_purge          => true,
