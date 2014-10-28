@@ -47,8 +47,6 @@ node /.*\.dgudev/ {
   beluga::drupal_site { 'standards':
     site_owner => 'co'
   }
-
-  class { 'apache::mod::wsgi': }
 }
 
 
