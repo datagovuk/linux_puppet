@@ -3,102 +3,102 @@
 
 forge "http://forge.puppetlabs.com"
 
-mod 'beluga',
+mod 'SilexConsulting/beluga',
     :git => 'https://github.com/SilexConsulting/puppet-beluga.git'
 
-mod 'apache',
+mod 'SilexConsulting/apache',
     :git => 'https://github.com/SilexConsulting/puppetlabs-apache.git'
 
-mod 'concat',
+mod 'SilexConsulting/concat',
     :git => 'https://github.com/SilexConsulting/puppetlabs-concat.git'
 
-mod 'silex/ckan',
+mod 'SilexConsulting/ckan',
     :git => 'https://github.com/SilexConsulting/puppet_ckan.git'
 
-mod 'elda',
+mod 'SilexConsulting/elda',
     :git => 'https://github.com/SilexConsulting/puppet-elda.git'
 
-mod 'puppetlabs/firewall',
+mod 'SilexConsulting/firewall',
     :git => 'https://github.com/SilexConsulting/puppetlabs-firewall.git'
 
-mod 'fuseki',
+mod 'SilexConsulting/fuseki',
     :git => 'https://github.com/SilexConsulting/puppet-fuseki.git'
 
-mod 'gitlab',
+mod 'SilexConsulting/gitlab',
     :git => 'https://github.com/SilexConsulting/puppet-gitlab.git'
 
-mod 'java',
+mod 'SilexConsulting/java',
     :git => 'https://github.com/SilexConsulting/puppetlabs-java.git'
 
-mod 'jenkins',
+mod 'SilexConsulting/jenkins',
     :git => 'https://github.com/SilexConsulting/puppet-jenkins.git'
 
-mod 'mysql',
+mod 'SilexConsulting/mysql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-mysql.git'
 
-mod 'nginx',
+mod 'SilexConsulting/nginx',
     :git => 'https://github.com/SilexConsulting/puppet-nginx.git'
 
-mod 'ntp',
+mod 'SilexConsulting/ntp',
    :git => 'https://github.com/puppetlabs/puppetlabs-ntp.git'
 
-mod 'openldap',
+mod 'SilexConsulting/openldap',
     :git => 'https://github.com/SilexConsulting/puppetlabs-openldap.git'
 
-mod 'orgdc',
+mod 'SilexConsulting/orgdc',
     :git => 'https://github.com/SilexConsulting/puppet-orgdc.git'
 
-mod 'stdlib',
+mod 'SilexConsulting/stdlib',
     :git => 'https://github.com/SilexConsulting/puppetlabs-stdlib.git',
     :ref => '3.2.1'
 
-mod 'postgresql',
+mod 'SilexConsulting/postgresql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-postgresql'
 
-mod 'redis',
+mod 'SilexConsulting/redis',
     :git => 'https://github.com/SilexConsulting/puppet-redis'
 
-mod 'referencetimeserver',
+mod 'SilexConsulting/referencetimeserver',
     :git => 'https://github.com/SilexConsulting/puppet-referencetimeserver.git'
 
-mod 'solr',
+mod 'SilexConsulting/solr',
     :git => 'https://github.com/SilexConsulting/puppet-solr.git'
 
-mod 'sudo',
+mod 'SilexConsulting/sudo',
     :git => 'https://github.com/SilexConsulting/puppet-sudo.git'
 
-mod 'tomcat',
+mod 'SilexConsulting/tomcat',
     :git => 'https://github.com/SilexConsulting/puppet-tomcat.git'
 
-mod 'varnish',
+mod 'SilexConsulting/varnish',
     :git => 'https://github.com/SilexConsulting/puppet-varnish.git'
 
-mod 'apt',
+mod 'SilexConsulting/apt',
     :git => 'https://github.com/SilexConsulting/puppetlabs-apt'
 
-mod 'memcached',
+mod 'SilexConsulting/memcached',
     :git => 'https://github.com/SilexConsulting/puppet-memcached'
 
-mod 'nodejs',
+mod 'SilexConsulting/nodejs',
     :git => 'https://github.com/SilexConsulting/puppet-nodejs.git'
 
-mod 'composer',
+mod 'SilexConsulting/composer',
     :git => 'https://github.com/SilexConsulting/puppet-composer.git'
 
-mod 'wget',
+mod 'SilexConsulting/wget',
     :git => 'https://github.com/SilexConsulting/puppet-wget.git'
 
-mod 'postfix',
+mod 'SilexConsulting/postfix',
     :git => 'https://github.com/SilexConsulting/puppet-postfix.git'
 
-mod 'dgu_solr',
+mod 'datagovuk/dgu_solr',
     :git => 'https://github.com/datagovuk/dgu_solr.git'
 
-mod 'rvm',
+mod 'SilexConsulting/rvm',
     :git => 'https://github.com/SilexConsulting/puppet-rvm.git'
 
-mod 'python',
+mod 'SilexConsulting/python',
     :git => 'https://github.com/SilexConsulting/puppet-python.git'
 
-mod 'uwsgi',
+mod 'SilexConsulting/uwsgi',
     :git => 'https://github.com/SilexConsulting/puppet-uwsgi.git'
