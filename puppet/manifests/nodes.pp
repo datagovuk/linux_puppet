@@ -8,6 +8,7 @@ node /.*\.dgudev/ {
   # as your Vagrantfile and the vagrant provisioner
   # will use that instead.
 
+  include beluga::apache_frontend_server
   include beluga::mail_server
   include beluga::drush_server
   include beluga::mysql_server
@@ -47,6 +48,7 @@ node /.*\.dgudev/ {
   beluga::drupal_site { 'standards':
     site_owner => 'co'
   }
+
 }
 
 
