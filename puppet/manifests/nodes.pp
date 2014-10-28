@@ -51,10 +51,8 @@ node /.*\.dgudev/ {
     source_dir_purge          => true,
   }
 
-  class {'beluga::apache_frontend_server':
-    domain_name               => 'dgud7',
-    owner                     => 'co',
-    group                     => 'co'
+  beluga::drupal_site { 'standards':
+    site_owner => 'co'
   }
 
   class { 'apache::mod::wsgi': }
@@ -73,6 +71,7 @@ node standards {
 
   class {'beluga::mysql_server': }
 
+  class { 'beluga::drush_server': }
   include standards_site
 
 }
