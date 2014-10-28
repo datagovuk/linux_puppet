@@ -12,6 +12,9 @@ mod 'apache',
 mod 'concat',
     :git => 'https://github.com/SilexConsulting/puppetlabs-concat.git'
 
+mod 'silex/ckan',
+    :git => 'https://github.com/SilexConsulting/puppet_ckan.git'
+
 mod 'elda',
     :git => 'https://github.com/SilexConsulting/puppet-elda.git'
 
