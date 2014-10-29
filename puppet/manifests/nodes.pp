@@ -17,11 +17,6 @@ node /.*\.dgudev/ {
   include memcached
   include orgdc
   include redis
-  include uwsgi
-
-  class { 'apache::mod::wsgi':
-    require                   => Class['beluga::apache_frontend_server'],
-  }
 
   class { 'sudo':
     purge                     => false,
