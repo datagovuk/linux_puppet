@@ -19,6 +19,10 @@ node /.*\.dgudev/ {
   include redis
   include uwsgi
 
+  class { 'apache::mod::wsgi':
+    require                   => Class['beluga::apache_frontend_server'],
+  }
+
   class { 'sudo':
     purge                     => false,
     config_file_replace       => false,
@@ -39,13 +43,15 @@ node /.*\.dgudev/ {
     configure_firewall        => false,
   }
 
-  class { 'solr':
-    source_dir                => "puppet:///modules/dgu_solr/solr",
-    source_dir_purge          => true,
-  }
-
   beluga::drupal_site { 'standards':
     site_owner => 'co'
+  }
+
+  class { 'python':
+    dev                       => true,  # required for pip to install dependencies
+    pip                       => true,
+    version                   => 'system',
+    virtualenv                => true,
   }
 
 }
