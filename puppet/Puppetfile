@@ -6,6 +6,9 @@ forge "http://forge.puppetlabs.com"
 mod 'SilexConsulting/beluga',
     :git => 'https://github.com/SilexConsulting/puppet-beluga.git'
 
+mod 'SilexConsulting/boolean',
+    :git => 'git@github.com:SilexConsulting/puppet-boolean.git'
+
 mod 'SilexConsulting/apache',
     :git => 'https://github.com/SilexConsulting/puppetlabs-apache.git'
 
@@ -17,6 +20,9 @@ mod 'SilexConsulting/ckan',
 
 mod 'SilexConsulting/elda',
     :git => 'https://github.com/SilexConsulting/puppet-elda.git'
+
+mod 'SilexConsulting/filemapper',
+    :git => 'https://github.com/SilexConsulting/puppet-filemapper.git'
 
 mod 'SilexConsulting/firewall',
     :git => 'https://github.com/SilexConsulting/puppetlabs-firewall.git'
@@ -35,6 +41,9 @@ mod 'SilexConsulting/jenkins',
 
 mod 'SilexConsulting/mysql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-mysql.git'
+
+mod 'SilexConsulting/network',
+    :git => 'https://github.com/SilexConsulting/puppet-network.git'
 
 mod 'SilexConsulting/nginx',
     :git => 'https://github.com/SilexConsulting/puppet-nginx.git'
