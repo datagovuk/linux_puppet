@@ -17,6 +17,7 @@ node /.*\.dgudev/ {
   include memcached
   include orgdc
   include redis
+  include uwsgi
 
   class { 'sudo':
     purge                     => false,
@@ -38,6 +39,11 @@ node /.*\.dgudev/ {
     configure_firewall        => false,
   }
 
+  class { 'solr':
+    source_dir                => "puppet:///modules/dgu_solr/solr",
+    source_dir_purge          => true,
+  }
+
   beluga::drupal_site { 'standards':
     site_owner => 'co'
   }
@@ -55,6 +61,14 @@ node /.*\.dgudev/ {
 node standards {
 
   include prod_defaults
+  network_config { 'eth0':
+    ensure  => 'present',
+    family  => 'inet',
+    method  => 'static',
+    ipaddress => '46.43.41.17',
+    netmask => '255.255.255.192',
+    onboot  => 'true',
+  }
 
   class {"beluga::developer_tools":
     install_git => true,
