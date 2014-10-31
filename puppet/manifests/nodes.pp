@@ -17,7 +17,6 @@ node /.*\.dgudev/ {
   include memcached
   include orgdc
   include redis
-  include uwsgi
 
   class { 'sudo':
     purge                     => false,
@@ -47,9 +46,7 @@ node /.*\.dgudev/ {
   beluga::drupal_site { 'standards':
     site_owner => 'co'
   }
-
 }
-
 
 node standards {
 
