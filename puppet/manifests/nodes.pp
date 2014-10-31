@@ -48,13 +48,6 @@ node /.*\.dgudev/ {
     site_owner => 'co'
   }
 
-  class { 'python':
-    dev                       => true,  # required for pip to install dependencies
-    pip                       => true,
-    version                   => 'system',
-    virtualenv                => true,
-  }
-
 }
 
 
