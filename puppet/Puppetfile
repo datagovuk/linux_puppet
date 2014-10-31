@@ -7,7 +7,7 @@ mod 'SilexConsulting/beluga',
     :git => 'https://github.com/SilexConsulting/puppet-beluga.git'
 
 mod 'SilexConsulting/boolean',
-    :git => 'git@github.com:SilexConsulting/puppet-boolean.git'
+    :git => 'https://github.com/SilexConsulting/puppet-boolean.git'
 
 mod 'SilexConsulting/apache',
     :git => 'https://github.com/SilexConsulting/puppetlabs-apache.git'
