@@ -13,7 +13,7 @@ It is recommended that your host machine has at least 4GB of RAM installed.
 
 Ensure Git is installed, then on the HOST machine;
 
-  git clone https://github.co.uk/datagovuk/linux_puppet.git
+  git clone https://github.com/datagovuk/linux_puppet.git
   
   cd linux_puppet
   
