@@ -22,11 +22,10 @@ then
     chmod 600 /home/co/.ssh/id_rsa.pub /home/co/.ssh/id_rsa
     chmod 700 /home/co/.ssh
     echo dev > /etc/role
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-
 
     #Temporary - need to add these to the base box?
     apt-get update
+    sudo gem update
     sudo gem install hiera
     sudo gem install hiera-eyaml
     rm -rf /etc/puppet
