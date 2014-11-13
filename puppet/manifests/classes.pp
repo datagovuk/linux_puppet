@@ -245,4 +245,16 @@ class standards_site {
     log_level     => 'warn',
     logroot => '/var/www/drupal/standards/logs',
   }
+
+  class dgu_fedt {
+    #class { 'nginx': }
+
+    #file { '/etc/nginx/conf.d/default.conf':
+    #  ensure => absent,
+    #}
+    #file { '/etc/nginx/conf.d/default.conf':
+    #  ensure => absent,
+    #}
+
+  }
 }
