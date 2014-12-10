@@ -150,6 +150,13 @@ class dgu_users {
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCivrFqnfd4ZYfxi6z0HGwzI3GytcTq+aIN0byc3zxSDedq1PXnP/i5e1c6Olkr/4fuJo1pcczNbDkkTK0NdYiEaG7eIKv0KSukxE85z1mZnjTHPLn2LjFkcT3W9+w7jZ62+LKVp8Yv5nqb6E3OILG9hwB/27Ai3kia+xu6Zjf4ptz5wM+fEp8rFnZ7Y9QcKALsOUdYuc5BZPBKXsHfpuHk/TuBKNnjEIfJ+2lnb5wcxTB57YhA9Qtv+jT9Q5wcX5zGdYao3AgFL50wt3C52U0lDVdVVAuCLQQ954LAOrEWDMHkHcqhE9bkHXEoFO/7w7aDQbw3Nq1EuzGL7kwLc251',
     key_type => 'ssh-rsa'
   }
+
+  beluga::user {'djotto':
+    uid     => 5017,
+	groups  => ['admins'],
+	ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCb0oQBfctaYbksZQnZp0MWIGtjJTd4o8tQGM3QJb39w31FiYFmXLo8XNLFnfZU1xr6WH2AeaaGtuPI5feemlzyDF58wHL1OSqETPQVqiSBiAz7WfiRl2Bdztu8yVvAEWWUJNDh9wncToa/dmBoMfq5K518iGoyO79NVU7FpzxCH9lSnL9bLHdC6bKXmuqUZ+lWRkTLVyUO9qt70GY58NohVJC15uUJ2tWA2TPl7PUMRvKL6TPjlosViQ8vBjFzWKO0+key8iWebz4Meu+xWJ9KDuH5ro4hSHOuIOduLARdw8DV6bnvTV4K9zC41dVIromNSj3Zwp0TQxOciC6/cg55',
+	key_type => 'ssh-rsa',
+  }
 }
 
 class dgu_keys {
