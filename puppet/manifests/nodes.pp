@@ -8,6 +8,7 @@ node /.*\.dgudev/ {
   # as your Vagrantfile and the vagrant provisioner
   # will use that instead.
 
+  /*
   include beluga::mail_server
   include beluga::drush_server
   include beluga::mysql_server
@@ -15,6 +16,7 @@ node /.*\.dgudev/ {
   include ckan
   include dgu_defaults
   include memcached
+  */
   include orgdc
   include redis
 
@@ -28,7 +30,8 @@ node /.*\.dgudev/ {
     install_vim               => true,
   }
 
-  class { 'beluga::frontend_traffic_director':
+
+  /*class { 'beluga::frontend_traffic_director':
     extra_selectors           => $extra_selectors,
     frontend_domain           => 'dgud7',
     backend_domain            => 'dgud7',
@@ -45,6 +48,20 @@ node /.*\.dgudev/ {
 
   beluga::drupal_site { 'standards':
     site_owner => 'co'
+  }*/
+  package {'puppetmaster':
+    ensure  =>  latest,
+  }
+  class { 'puppetdb':
+    database => 'embedded',
+    require => Package['puppetmaster'],
+  }
+  class {'puppetdb::master::config':
+  }
+  class {'dashboard':
+    dashboard_site    => $fqdn,
+    dashboard_port    => '3000',
+    require           => Package["puppetmaster"],
   }
 }
 

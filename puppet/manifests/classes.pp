@@ -1,4 +1,7 @@
 class all_defaults{
+  package {'puppetdb-terminus':
+    ensure => installed,
+  }
   class { 'beluga':
     stage => pre,
   }
