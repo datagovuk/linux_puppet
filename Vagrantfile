@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8081, host: 8081 # tomcat
   config.vm.network "forwarded_port", guest: 8080, host: 8888 # jenkins
   config.vm.network "forwarded_port", guest: 3306, host: 3366 # mysql
+  config.vm.network "forwarded_port", guest: 3000, host: 3000 # dashboard
 
  config.vm.provider "virtualbox" do |vb|
     # allow symlinks - you are using this in a *nix host system right?
