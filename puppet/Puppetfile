@@ -18,6 +18,9 @@ mod 'SilexConsulting/concat',
 mod 'SilexConsulting/ckan',
     :git => 'https://github.com/SilexConsulting/puppet_ckan.git'
 
+mod 'SilexConsulting/dashboard',
+    :git => 'https://github.com/SilexConsulting/puppetlabs-dashboard.git'
+
 mod 'SilexConsulting/elda',
     :git => 'https://github.com/SilexConsulting/puppet-elda.git'
 
@@ -32,6 +35,9 @@ mod 'SilexConsulting/fuseki',
 
 mod 'SilexConsulting/gitlab',
     :git => 'https://github.com/SilexConsulting/puppet-gitlab.git'
+
+mod 'SilexConsulting/inifile',
+    :git => 'https://github.com/SilexConsulting/puppetlabs-inifile.git'
 
 mod 'SilexConsulting/java',
     :git => 'https://github.com/SilexConsulting/puppetlabs-java.git'
