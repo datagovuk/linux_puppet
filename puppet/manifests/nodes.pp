@@ -60,6 +60,7 @@ node /.*\.dgudev/ {
     dashboard_site    => $fqdn,
     dashboard_port    => '3000',
     require           => Package["puppetmaster"],
+    mysql             => false,
   }
 }
 
