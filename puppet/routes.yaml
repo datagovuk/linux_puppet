@@ -1,5 +1,11 @@
 ---
 master:
-facts:
-terminus: puppetdb
-cache: yaml
+  facts:
+    cache: yaml
+  catalog:
+    cache: json
+agent:
+  facts:
+    cache: yaml
+  catalog:
+    cache: json
