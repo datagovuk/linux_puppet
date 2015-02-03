@@ -25,15 +25,29 @@ then
 
     #Temporary - need to add these to the base box?
     wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
-    sudo dpkg -i puppetlabs-release-precise.deb
-    sudo apt-get update
-    sudo puppet resource package puppetdb-terminus ensure=latest
-    sudo puppet resource package puppetdb ensure=latest
+    dpkg -i puppetlabs-release-precise.deb
+    apt-get update
+    apt-get purge --yes puppet
+    #apt-get install --yes puppet
+    #apt-get install --yes puppetmaster
+    cp /vagrant/puppet/puppet.conf /etc/puppet/
+    cp /vagrant/puppet/autosign.conf /etc/puppet/
+    cp /vagrant/puppet/auth.conf /etc/puppet/
+    #puppet resource package puppetdb ensure=latest
+    #puppet resource service puppetdb ensure=running enable=true
+    #puppet resource package puppetdb-terminus ensure=latest
+
+    apt-get install --yes ruby1.9.1 ruby1.9.1-dev \
+        rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 \
+        build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev >/dev/null
+    apt-get install --yes libactiverecord-ruby1.9.1  >/dev/null
+    apt-get install --yes libsqlite3-ruby1.9.1  >/dev/null
+    update-alternatives --set ruby /usr/bin/ruby1.9.1  >/dev/null
+    update-alternatives --set gem /usr/bin/gem1.9.1  >/dev/null
 
     sudo gem update
     sudo gem install hiera
     sudo gem install hiera-eyaml
-    #install puppetdb terminus
 
     rm -rf /etc/puppet
     ln -sf /vagrant/puppet /etc/
@@ -41,11 +55,6 @@ then
     #Update puppet module dependencies using librarian-puppet
     #cd /vagrant/puppet
     #librarian-puppet update
-
-    mkdir /etc/puppet_ssl
-    ln -sf /etc/puppet_ssl /etc/puppet/ssl
-    puppet apply --test
-
 
     if [ ! -f /vagrant/keys/private_key.pkcs7.pem ];
     then
