@@ -8,7 +8,6 @@ node /.*\.dgudev/ {
   # as your Vagrantfile and the vagrant provisioner
   # will use that instead.
 
-  /*
   include beluga::mail_server
   include beluga::drush_server
   include beluga::mysql_server
@@ -16,7 +15,6 @@ node /.*\.dgudev/ {
   include ckan
   include dgu_defaults
   include memcached
-  */
   include orgdc
   include redis
 
@@ -31,7 +29,7 @@ node /.*\.dgudev/ {
   }
 
 
-  /*class { 'beluga::frontend_traffic_director':
+  class { 'beluga::frontend_traffic_director':
     extra_selectors           => $extra_selectors,
     frontend_domain           => 'dgud7',
     backend_domain            => 'dgud7',
@@ -41,23 +39,23 @@ node /.*\.dgudev/ {
     configure_firewall        => false,
   }
 
-  class { 'solr':
-    source_dir                => "puppet:///modules/dgu_solr/solr",
-    source_dir_purge          => true,
-  }
+  include dgu_solr
 
   beluga::drupal_site { 'standards':
     site_owner => 'co'
-  }*/
+  }
+
   package {'puppetmaster':
     ensure  =>  latest,
   }
-  class { 'puppetdb':
+  /*class { 'puppetdb':
     database => 'embedded',
+    listen_port => 8980,
+    listen_address => 'vagrant.dgudev',
     require => Package['puppetmaster'],
   }
   class {'puppetdb::master::config':
-  }
+  }*/
   class {'dashboard':
     dashboard_site    => $fqdn,
     dashboard_port    => '3000',
