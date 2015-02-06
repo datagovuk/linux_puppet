@@ -53,8 +53,8 @@ then
     ln -sf /vagrant/puppet /etc/
     ln -sf /etc/puppet/hiera.yaml /etc/
     #Update puppet module dependencies using librarian-puppet
-    #cd /vagrant/puppet
-    #librarian-puppet update
+    cd /vagrant/puppet
+    librarian-puppet update
 
     if [ ! -f /vagrant/keys/private_key.pkcs7.pem ];
     then
