@@ -45,10 +45,10 @@ then
     update-alternatives --set ruby /usr/bin/ruby1.9.1  >/dev/null
     update-alternatives --set gem /usr/bin/gem1.9.1  >/dev/null
 
-    sudo gem update
-    sudo gem install librarian-puppet
-    sudo gem install hiera
-    sudo gem install hiera-eyaml
+    gem update
+    gem install librarian-puppet
+    gem install hiera
+    gem install hiera-eyaml
 
     rm -rf /etc/puppet
     ln -sf /vagrant/puppet /etc/
