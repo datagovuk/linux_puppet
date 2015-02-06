@@ -64,7 +64,7 @@ mod 'SilexConsulting/orgdc',
     :git => 'https://github.com/SilexConsulting/puppet-orgdc.git'
 
 mod 'SilexConsulting/stdlib',
-    :git => 'https://github.com/SilexConsulting/puppetlabs-stdlib.git',
+    :git => 'https://github.com/SilexConsulting/puppetlabs-stdlib.git'
 
 mod 'SilexConsulting/postgresql',
     :git => 'https://github.com/SilexConsulting/puppetlabs-postgresql'
