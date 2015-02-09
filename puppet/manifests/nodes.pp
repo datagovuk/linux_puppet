@@ -48,20 +48,6 @@ node /.*\.dgudev/ {
   package {'puppetmaster':
     ensure  =>  latest,
   }
-  /*class { 'puppetdb':
-    database => 'embedded',
-    listen_port => 8980,
-    listen_address => 'vagrant.dgudev',
-    require => Package['puppetmaster'],
-  }
-  class {'puppetdb::master::config':
-  }*/
-  class {'dashboard':
-    dashboard_site    => $fqdn,
-    dashboard_port    => '3000',
-    require           => Package["puppetmaster"],
-    mysql             => false,
-  }
 }
 
 node standards {

@@ -24,7 +24,7 @@ then
     echo dev > /etc/role
 
     #Temporary - need to add these to the base box?
-    wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
+    wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb > /dev/null
     dpkg -i puppetlabs-release-precise.deb
     apt-get update
     apt-get purge --yes puppet
