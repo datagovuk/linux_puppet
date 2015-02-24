@@ -12,7 +12,10 @@ node /.*\.dgudev/ {
   include beluga::drush_server
   include beluga::mysql_server
   include beluga::ruby_frontend
-  include ckan
+  class { 'ckan':
+    nginx_vhost => 'dgud7',
+    nginx_port  => 8880,
+  }
   include dgu_defaults
   include memcached
   include orgdc
@@ -44,9 +47,17 @@ node /.*\.dgudev/ {
   beluga::drupal_site { 'standards':
     site_owner => 'co'
   }
-
+  beluga::drupal_site { 'dgud7':
+    site_owner => 'co'
+  }
   package {'puppetmaster':
     ensure  =>  latest,
+  }
+
+  host{'localhost':
+    ensure => present,
+    host_aliases => ['dgud7', 'standards', 'ckan'],
+    ip => '127.0.0.1',
   }
 }
 
