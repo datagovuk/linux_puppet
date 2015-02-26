@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -e
-
 export PATH=$PATH:/usr/local/node/node-v0.10.26/bin
 
 cd /tmp
