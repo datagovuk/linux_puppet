@@ -26,8 +26,9 @@ zcat /vagrant/dgud7/profiles/dgu/sample/dgud7_default_db.sql.gz | mysql -u root 
 drush -y composer-json-rebuild
 drush -y composer-manager
 drush -y updatedb
-mv /vagrant/dgud7/sites/default/files/ /home/co/files/
-sudo chown -R www-data:www-data /home/co/files
-ln -s /home/co/files /vagrant/dgud7/sites/default/
+cp -a /vagrant/dgud7/sites/default/files/* /var/www/files/dgud7/
+sudo chown -R www-data:www-data /var/www/files/dgud7/
+rm -rf /vagrant/dgud7/sites/default/files
+ln -s /var/www/files/dgud7  /var/www/drupal/dgud7/current/sites/default/files
 ln -s /vagrant/dgud7 /var/www/drupal/dgud7/current
 echo "You should now be able to browse to http://localhost:8000"
