@@ -27,6 +27,6 @@ drush -y updatedb
 cp -a /vagrant/dgud7/sites/default/files/* /var/www/files/dgud7/
 sudo chown -R www-data:www-data /var/www/files/dgud7/
 rm -rf /vagrant/dgud7/sites/default/files
-ln -s /var/www/files/dgud7  /var/www/drupal/dgud7/current/sites/default/files
 ln -s /vagrant/dgud7 /var/www/drupal/dgud7/current
+ln -s /var/www/files/dgud7  /var/www/drupal/dgud7/current/sites/default/files
 echo "You should now be able to browse to http://localhost:8000"
