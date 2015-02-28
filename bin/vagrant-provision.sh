@@ -24,8 +24,8 @@ then
     echo dev > /etc/role
 
     #Temporary - need to add these to the base box?
-    wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb > /dev/null
-    dpkg -i puppetlabs-release-precise.deb
+    #wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb > /dev/null
+    #dpkg -i puppetlabs-release-precise.deb
     apt-get update
     apt-get purge --yes puppet
     #apt-get install --yes puppet
@@ -42,6 +42,7 @@ then
         build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev >/dev/null
     apt-get install --yes libactiverecord-ruby1.9.1  >/dev/null
     apt-get install --yes libsqlite3-ruby1.9.1  >/dev/null
+    apt-get install --yes puppet >/dev/null
     update-alternatives --set ruby /usr/bin/ruby1.9.1  >/dev/null
     update-alternatives --set gem /usr/bin/gem1.9.1  >/dev/null
 
