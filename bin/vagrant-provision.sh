@@ -26,37 +26,32 @@ then
     #Temporary - need to add these to the base box?
     #wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb > /dev/null
     #dpkg -i puppetlabs-release-precise.deb
-    apt-get update
-    apt-get purge --yes puppet
-    #apt-get install --yes puppet
-    #apt-get install --yes puppetmaster
+    apt-get update  > /dev/null 2>&1
+    apt-get purge --yes puppet > /dev/null 2>&1
     cp /vagrant/puppet/puppet.conf /etc/puppet/
     cp /vagrant/puppet/autosign.conf /etc/puppet/
     cp /vagrant/puppet/auth.conf /etc/puppet/
-    #puppet resource package puppetdb ensure=latest
-    #puppet resource service puppetdb ensure=running enable=true
-    #puppet resource package puppetdb-terminus ensure=latest
 
     apt-get install --yes ruby1.9.1 ruby1.9.1-dev \
         rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 \
-        build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev >/dev/null
-    apt-get install --yes libactiverecord-ruby1.9.1  >/dev/null
-    apt-get install --yes libsqlite3-ruby1.9.1  >/dev/null
-    apt-get install --yes puppet >/dev/null
-    update-alternatives --set ruby /usr/bin/ruby1.9.1  >/dev/null
-    update-alternatives --set gem /usr/bin/gem1.9.1  >/dev/null
+        build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev > /dev/null 2>&1
+    apt-get install --yes libactiverecord-ruby1.9.1 > /dev/null 2>&1
+    apt-get install --yes libsqlite3-ruby1.9.1 > /dev/null 2>&1
+    update-alternatives --set ruby /usr/bin/ruby1.9.1 > /dev/null 2>&1
+    update-alternatives --set gem /usr/bin/gem1.9.1 > /dev/null 2>&1
+    apt-get install --yes puppet > /dev/null 2>&1
 
-    gem update
-    gem install librarian-puppet
-    gem install hiera
-    gem install hiera-eyaml
+    gem update  > /dev/null 2>&1
+    gem install librarian-puppet  > /dev/null 2>&1
+    gem install hiera > /dev/null 2>&1
+    gem install hiera-eyaml > /dev/null 2>&1
 
     rm -rf /etc/puppet
     ln -sf /vagrant/puppet /etc/
     ln -sf /etc/puppet/hiera.yaml /etc/
     #Update puppet module dependencies using librarian-puppet
     cd /vagrant/puppet
-    librarian-puppet update
+        librarian-puppet update
 
     if [ ! -f /vagrant/keys/private_key.pkcs7.pem ];
     then
