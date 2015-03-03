@@ -233,7 +233,7 @@ class standards_site {
   }
   apache::vhost { 'standards.data.gov.uk':
     override      => 'All',
-    port          => 80,
+    port          => 8080,
     manage_docroot  => false,
     docroot       => '/var/www/drupal/standards/current',
     docroot_owner => 'co',
