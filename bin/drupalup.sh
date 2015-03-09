@@ -17,6 +17,8 @@ grunt
 cd /vagrant/dgud7
 ln -s ./shared_dguk_assets/assets
 drush  --db-url=mysql://root:dev@localhost/dgud7 --uri=http://dgud7:8880 --root=/vagrant/dgud7 --yes --verbose site-install dgu --sites-subdir=default --account-name=admin --account-pass=admin --site-mail='dgud7-info@vagrant.dgudev' --site-name='dgud7' --yes
+chmod 777 /vagrant/dgud7/sites/default/settings.php
+echo "\$base_url = 'http://dgud7:8880';" >> /vagrant/dgud7/sites/default/settings.php
 sudo rm -rf /var/www/dgud7
 sudo ln -sf /vagrant/dgud7 /var/www/
 cp -R /vagrant/dgud7/profiles/dgu/sample/images/files /vagrant/dgud7/sites/default/

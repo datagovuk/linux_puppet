@@ -38,9 +38,10 @@ node /.*\.dgudev/ {
     backend_domain            => 'dgud7',
   }
 
-  class { 'jenkins':
-    configure_firewall        => false,
-  }
+# clashing with tomcat. disable for now.
+#  class { 'jenkins':
+#    configure_firewall        => false,
+#  }
 
   include dgu_solr
 
@@ -59,6 +60,11 @@ node /.*\.dgudev/ {
     host_aliases => ['dgud7', 'standards', 'ckan'],
     ip => '127.0.0.1',
   }
+
+  class {'varnish':
+    varnish_listen_port => 8881,
+  }
+  include varnish::vcl
 }
 
 node standards {
@@ -86,6 +92,40 @@ node standards {
 
 }
 
+node fetdirector {
+  include prod_defaults
+  network_config { 'eth0':
+    ensure  => 'present',
+    family  => 'inet',
+    method  => 'static',
+    ipaddress => '46.43.41.15',
+    netmask => '255.255.255.192',
+    onboot  => 'true',
+  }
+
+  host{'localhost':
+    ensure => present,
+    host_aliases => ['fetdirector'],
+    ip => '127.0.0.1',
+  }
+
+  class {"beluga::developer_tools":
+    install_git => true,
+  }
+  nginx::resource::vhost { 'data.gov.uk':
+    proxy_redirect => "http://dgud7/ http://\$host/",
+    proxy_set_header => ['X-Real-IP  $remote_addr', 'X-Forwarded-For $remote_addr', 'Host $host'],
+    proxy => "http://upstream-dgud7_prod_01",
+  }
+}
+
+node ckan_prod_01 {
+  class { 'ckan':
+    nginx_vhost => 'data.gov.uk',
+    nginx_port  => 80,
+  }
+}
+
 node puppetmaster {
   include prod_defaults
 }
@@ -111,3 +151,5 @@ node epdev {
   class { "tomcat":
   }
 }
+
+
