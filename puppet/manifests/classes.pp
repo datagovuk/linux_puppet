@@ -261,7 +261,7 @@ class standards_site {
 }
 
 class dgu_organogram_explorer {
-  file {['/var/www/organogram/','/var/www/logs/organogram']:
+  file {['/var/www/organogram/','/var/www/logs','/var/www/logs/organogram']:
     ensure => 'directory',
     owner => 'co',
     group => 'www-data',
