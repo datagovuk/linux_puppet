@@ -267,6 +267,7 @@ class dgu_organogram_explorer {
     group => 'www-data',
     mode => 775,
   }
+  apache::mod::php
   apache::vhost { 'organogram.data.gov.uk':
     override      => 'All',
     port          => 80,
