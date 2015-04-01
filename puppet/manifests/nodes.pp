@@ -136,6 +136,7 @@ node dataconversion {
   include java
   class { "tomcat":
   }
+  include apache
   include orgdc
   include dgu_organogram_explorer
 }
