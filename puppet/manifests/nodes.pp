@@ -136,7 +136,7 @@ node dataconversion {
   include java
   class { "tomcat":
   }
-  include apache
+  beluga::apache_frontend_server
   include orgdc
   include dgu_organogram_explorer
 }
