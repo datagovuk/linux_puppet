@@ -257,4 +257,27 @@ class standards_site {
     #}
 
   }
+
+}
+
+class dgu_organogram_explorer {
+  file {['/var/www/organogram/','/var/www/logs/organogram']:
+    ensure => 'directory',
+    owner => 'co',
+    group => 'www-data',
+    mode => 775,
+  }
+  apache::vhost { 'organogram.data.gov.uk':
+    override      => 'All',
+    port          => 80,
+    manage_docroot  => false,
+    docroot       => '/var/www/organogram/',
+    docroot_owner => 'co',
+    docroot_group => 'www-data',
+    serveradmin   => 'support@dguteam.org.uk',
+
+    log_level     => 'warn',
+    logroot => '/var/www/logs/organogram',
+  }
+
 }

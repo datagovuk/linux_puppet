@@ -65,6 +65,7 @@ node /.*\.dgudev/ {
     varnish_listen_port => 8881,
   }
   include varnish::vcl
+  include dgu_organogram_explorer
 }
 
 node standards {
@@ -136,6 +137,7 @@ node dataconversion {
   class { "tomcat":
   }
   include orgdc
+  include dgu_organogram_explorer
 }
 
 node dataservice {
