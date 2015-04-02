@@ -141,6 +141,8 @@ node dataconversion {
   include apache::mod::proxy
   include apache::mod::cache
   include apache::mod::disk_cache
+  include apache::mod::proxy_ajp
+  include apache::mod::proxy_html
   include orgdc
   include dgu_organogram_explorer
 }
