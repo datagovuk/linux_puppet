@@ -139,6 +139,7 @@ node dataconversion {
   include beluga::apache_frontend_server
   include apache::mod::autoindex
   include apache::mod::proxy
+  include apache::mod::cache
   include orgdc
   include dgu_organogram_explorer
 }
