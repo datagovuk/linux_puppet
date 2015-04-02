@@ -140,6 +140,7 @@ node dataconversion {
   include apache::mod::autoindex
   include apache::mod::proxy
   include apache::mod::cache
+  include apache::mod::disk_cache
   include orgdc
   include dgu_organogram_explorer
 }
