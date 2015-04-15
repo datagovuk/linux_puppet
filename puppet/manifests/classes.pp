@@ -268,7 +268,7 @@ class dgu_organogram_explorer {
     mode => 775,
   }
   apache::vhost { 'organogram.data.gov.uk':
-    serveraliases => ['organogram.dguteam.org.uk']
+    serveraliases => ['organogram.dguteam.org.uk'],
     override      => 'All',
     port          => 80,
     manage_docroot  => false,
