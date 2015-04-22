@@ -71,77 +71,70 @@ class dgu_users {
     uid => 5006,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDkKTI8g69iNTBnAM0BnCLZZY3wl1R0umyUDk58XD+7vfbxG0/1RyE1qo071jPwQoA21Meq+FFFB9mR6zQq3MFcu6dYL3D+xFaWmnVxu2y3MtXeJ4b/fShmF0DIe4ic6eQWSxY8Cjakz68+utJIioJeEtQ1PLsOqHlI9cMBlLp0JPo4JFLPv9B0TzMeGF6mQ3JXh9TS1M9TNXV/WyHz+9PyDjirnVRfQYDWanAvs+rw5uqID5lwW13cZBB4KJTu1kLWgpKRpto4gtDdmMhfKceMQAvTQpx+jiqvtPnmm/iIOXb1FxNpqWCNqZhpqgNUGvUkczIwmGu+xx5Nd0+p9EkT',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'thill':
     uid => 5007,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDzCjb8ti11Ydl/httnfvnXR6jEvSlsbln9WUmwTTzwBXcR36tYVbFeDL0iOiWcLIyV5LbBGjrS7WhYCwDZFMqHftxveiU2t7Ubaa1vl3uh7m+1+pXlsT6bTfO6z492APawOjRlPkcKsDIdBzv9w0EKyQwACTHeeRQ/eshrNFgdOrExH17tkZSuNE0YC8EzHB0efm1fKsRtMhYu7VqBZkCdSejALjpFzpik2ajtN1Kg9w2yajqfOHoizajE9OJpwmrjrIqDYr3edkuhvuUSvO6xfxHKwjo4BrXW/CvpfHopGPF5qqDOleV8vk/ioThZwYKE1a6s/576KDg4e/EWTrMp',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'nathan':
     uid => 5008,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQD62HaXWp+WxuU2INvtD+9jX8VuzgyL+mZ08GO1qDqDe6jX+HOz5CzZQ6s+oP0GUbaEP/CpCPuf5RHbLXaJoU4YgS8jR0f15G7IfI5Ez6aI5BZNj/AyQTlZbJlZCRyc+x5MnYcNcTM5pT0jQTJXhAlIjA+WgN4IcjmsJY5123JI9XYjz5nxstKwuH81agzZWOVT9u9gek1ySEer3s/K59O6GoZQfcNpwLum3EnUILxmFICayOohsEhpmL/FII+noJHsXipiwi3LGHQ1uleBOAQw/6YWwCfs+X/JggHxW7MY1Au3DF88zPhYNsB8nEG9BTrYEhS4llIe07kZRp11No1B',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'mattbee':
     uid => 5009,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDV85rbowKuJcogJaBXLEWO9MDKtFiNI23wN2v2ZdhKIaoyc6HYAjPb+XdQsLYmLlLWSlMFK7HM2qtpZ5EY0Qwvna+rpb2eOJgUT6dFVwkhaixcmaTpuGpnjwGx9iTBJZH7WNiYk41LyPJiuNcKblyE5+Vlmmo0JgnGT5osFrGT5aNSA0yRDGeXkxSkir+bfy03/AQrt9wq9umKQ5X/dckllD8Wen1HDf3dBQOpJerv/28NhUMFlJc2NfKfPMHJfq5bdhNtBW/WEBiutWayFbZIaWPLJTBlVhw3r6MqbqYPQOoRbKAdHb+FDyXDYTff6dnY5URTJ0RF8i3rtRg+y4Xv',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'prose':
     uid => 5010,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCuVcvATtQUdhiWggTfuwlqiELvAHR057ORXDPZzKPJRLrQiIfwqmyIukYoILCETRhQ74ODMdnhAmN8Tp0NeX/Zp7ZKnW2Rs+nnZ9eWEw3JT57v90PGGgjtVMfJVt7Re7z27zZtEB/F6yxAmxheGdVQ3O55n1jhP8r0PXbTiBVuDInTtCOkdtUDZYA1q16joR7ybuEE9cckNzp8EFb9zbspgBKnfPOvZyUmvTqZyvREENIdvbO9Ez68Zq6QEkydhQUTat3IXoBpi80jo40yxZFa2Ak4LvzHI9CMC1oshLZltCG2aFL7N4ycyTbjOQKNz0poBnrN8JxmgSDLzo67pRpd',
-    key_type => 'ssh-rsa'
-  }
-
-  beluga::user {'jhackett':
-    uid => 5011,
-    groups => ['admins'],
-    ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDKQds3dhX/09qcdugv7IvVurxi0bJQpWdJ/UsWs1f8oRWfw+atgxQ7BeShxfCs2MzkGGUp6khJ4Ucx1BPt7C03nklxvXGchKQKArL5Y3ECCU2B20rpOdWsNFU2IRBbVMOjz+a5+Lc2cjS+5qtR9/NDPlb2BFpebuno67FPw7l6rlhTfsiSDanTvbgyBE4X1STRQTaD0SHVCpb83K873GpZhhzPyJSSJKzYxA+Ppk9qNNdZr1sfI0oNUvuoDUzmWTPmem2I2zy4A/YguluzcgL0qLwg/YOvN6ALouIppWV3JkmzTv4ei+n5ZuE61yyV8fj8G3Z2HX1rsF56oRQ0sPzV',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'jhannah':
     uid => 5012,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDVRMbyKy2O/LtQzVEkIy2H+H2CRcV8dgFslIC3TruPWm0dr6X4O0s7NnJTB7A1y2Rcugk0xzgCTIkXMKzdgkr4d9ObJJhcDj+z9fCuEftaew5fdJx5kPUznaQHGXGAxRtaxVoHfhj50wD0Kw8Gi16u2EoWh4N16r0tIWLden7UJMfmnPD7zU3qPShj/XMKGYTjOPLvonGK5ow4eiQuK05+ghm1HtxcRtTohBHpAJ0NCdhhdbzp3SFSqqmuz7Otp1K6qNSse2tGx37+3vSYj89CQjfXD/HDzgnt+vU66LnDC1/ZyYH/GKKthsUmuEkXB2t0T2JyGnAJrUNiWZW7aNTL',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'jlawrie':
     uid => 5013,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCkVD/1NXrn5FvxwsUtfGBai8QsWAwJtce20aZOomCGCamN5O7U8ApcDmCt2RSo7T+GLQFPTi/rNq6kiH8JFmvtUMoti6kZkbopt52ibPzBhtM5WZMYH9qEXB07Uevd79/5lIEsydBUbeVVLRkuwQ4QybQApsOoghfITDU9HBOmo1aVEsEjTexs1RxzbZs9Is/W7tj0skyklHLGBXAdhQenDEdeFYKQYea3rkfB6UoOcKUebNk5asBWiVn3mDVE4T4rsBCZRa+qItdLIBJb/gm1s07eIGCL13Y+9Tnijn+YeGYniyqo9okBXxFM2Omxa2E92HtnFOPAT/lPRrN0Y0d5',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'telyn':
     uid => 5014,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCyEgFrVPKIlFUhkrXPDQkHS5jCCSmGJwF6JW18b4OE20E+MWtKXVNec8KSfrNmAv3uD06dyB/Bhk6tTRizcXJah2/e6xB0EhQJsVadPZker4qZn8yNvdKmn7aEmFmwgQ84pmGewbuuTRKmmV8VPFoZJwZjI3MaNTPdtm5HO9Fo2x05R9NTePbsYghvgMWosUTONraCbiX/XMUVnQVNoZPyWBlyp0GUQFkuoXN7SxFGxX4XEcReQZ3pgS+vWMkBITiRij0xIsqEQp/CLV0oUkvlbaB3sA5Br4k1UsRS4ZwdjR2LAxXSjHuowMz9rd0XOlXKIjUtx09adaUPYLafO9dp',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'pfoster':
     uid => 5015,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDAehQds8KnTD2skEyNfWqGDa9pZc0g1T2dDhqUPR6zZIYdVSem9pEDVd4P058BpBKDRtBJKZJtGbqIAMRBgQh5RoSPA5SUKpsf9ipersRlmqoItHtBB284kX5J4ABfr3fxCog7HfX3KYTsSuebyalyiL8rnIeRKgGgpBwGCRdHVt8CG6HLvg4yngMiojITMgLFb85iFbO7R5wWk1Gi/gPVqT1RVAh7zFtuGvmeXkDlap3Vx/3VJDQaja649BhoONGVYqubhDKfYCxw8+qV77y4KDLSuxUNGp6zezt8tFl1Vz5zFm9caudNLLuZOlY7ISnP8frWqq1wzSRSe3++gWAn',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'stevenraith':
     uid => 5016,
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDLX6Ee+dKAaLuMTUC7VkgIPffeIRxsFO2vOOl0XMWT+pCIxw0bLR19GvvDCX5Nrw+WXN4GIcQB0hrYkokaQ+NyoTRILwiL3+5/9aAMneo5zWztiyfkHxt4Nlvk/d6cF0kleY7rHqmgG602OpSn5jpWZ7QkSccH1dw4zcF/qDjDNU/piBwIR0zryJGOIhMwCygdq++lX2PEGYOugSqXWyNDhzYT7Ogc2Fv2eEum76tX9xClmV1anBz6Bd70ZavnqbVqNfrkPlXvsKN1mzW9h3154uJK9tIx1WxugJcPKVEd5RrAwWB8Od0KyFpmvOo02QcIuBrWPI5OmO7UK2BfnC6L',
-    key_type => 'ssh-rsa'
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'patch':
@@ -149,6 +142,27 @@ class dgu_users {
     groups => ['admins'],
     ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCivrFqnfd4ZYfxi6z0HGwzI3GytcTq+aIN0byc3zxSDedq1PXnP/i5e1c6Olkr/4fuJo1pcczNbDkkTK0NdYiEaG7eIKv0KSukxE85z1mZnjTHPLn2LjFkcT3W9+w7jZ62+LKVp8Yv5nqb6E3OILG9hwB/27Ai3kia+xu6Zjf4ptz5wM+fEp8rFnZ7Y9QcKALsOUdYuc5BZPBKXsHfpuHk/TuBKNnjEIfJ+2lnb5wcxTB57YhA9Qtv+jT9Q5wcX5zGdYao3AgFL50wt3C52U0lDVdVVAuCLQQ954LAOrEWDMHkHcqhE9bkHXEoFO/7w7aDQbw3Nq1EuzGL7kwLc251',
     key_type => 'ssh-rsa'
+  }
+  
+  beluga::user {'skemp':
+    uid => 5019,
+    groups => ['admins'],
+    ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCn2mkPv+1edCxcMZSKmRJ4Gtybq9vn/EzRgWx8NRuoHX8WYJUFOKmE1IIdPKGc7LprwBTRnk30Gd/o8oJgEVOVMXXbIGJpmyAgCWMDbp0ou7v/oZXbAU5SlvHIJjBQr5IL24O3Q4XWgn0criWx+w+CFrg9SV2nwHQ29YBkideSQbRb5rloW/ye0wmBubu4/zlpWwdPf2ax7kg+MOUUfxXj1RvDO0Njaq54lkFJwiXrvXGVShRbNSGpLEGGyXN5vTMD9ihJjZ75+NWERPpS6YID8wGdHamDQ5CAXvP5p2XPch2YjF6XJu72cIPjtw1lYrpa0eW7yVXE4jWvRePka9GH',
+    key_type => 'ssh-rsa',
+  }
+   
+  beluga::user {'mpoland':
+    uid => 5020,
+    groups => ['admins'],
+    ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/R2XWsNV2HZROpOakJAibCivSlEDBqDLQ8Ku3Jv64FmVrFPvtWSByy8KZ8LOYIRNWXpFMqOZbp+3GeaqmX9nf2cWr4GHH9/hX4G7B0Q0tZCSNkhoLFKffqlPHf5WVjtGRY0SPwuMiKoireZG8uKe8/DuMcxt76P4pQSu+HsNcXUI8tY9gkWOJ5NjRhcaNc/ZJoOl1Ca2onoyA5VYC8zlbxX3Ga/JKH5C7XE8UaMytbDwmNZ6l49duSn9CPlHslvvNVcVAxs1q60FOZEbC4/kz/la5aSSrOazz3rz7wMpnau8lERUpo2gofuwbweaVefODPVI6rre5tA+vcG+Cnc1v',
+    key_type => 'ssh-rsa',
+  }
+  
+  beluga::user {'telyn':
+    uid => 5021,
+    groups => ['admins'],
+    ssh_key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCyEgFrVPKIlFUhkrXPDQkHS5jCCSmGJwF6JW18b4OE20E+MWtKXVNec8KSfrNmAv3uD06dyB/Bhk6tTRizcXJah2/e6xB0EhQJsVadPZker4qZn8yNvdKmn7aEmFmwgQ84pmGewbuuTRKmmV8VPFoZJwZjI3MaNTPdtm5HO9Fo2x05R9NTePbsYghvgMWosUTONraCbiX/XMUVnQVNoZPyWBlyp0GUQFkuoXN7SxFGxX4XEcReQZ3pgS+vWMkBITiRij0xIsqEQp/CLV0oUkvlbaB3sA5Br4k1UsRS4ZwdjR2LAxXSjHuowMz9rd0XOlXKIjUtx09adaUPYLafO9dp',
+    key_type => 'ssh-rsa',
   }
 
   beluga::user {'djotto':
